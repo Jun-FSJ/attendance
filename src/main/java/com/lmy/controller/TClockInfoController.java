@@ -13,5 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/clock")
 public class TClockInfoController {
 
+
+
+    @RequestMapping("/index")
+    public String index(){
+
+        return "index";
+    }
 }
 
