@@ -10,6 +10,8 @@ package com.lmy.interceptor;
 
 import com.lmy.entity.TEmployee;
 import com.lmy.utils.CookieUtils;
+import com.lmy.utils.JsonUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -28,8 +30,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        TEmployee employee = (TEmployee) request.getSession().getAttribute("employee");
-        if (employee == null) {
+        String json = CookieUtils.getCookieValue(request, "TOKEN");
+        if (StringUtils.isBlank(json)) {
             response.sendRedirect("/login");
             return false;
         }else {

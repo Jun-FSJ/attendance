@@ -24,7 +24,13 @@ public class TClockInfoController {
     private TClockInfoService tClockInfoServiceImpl;
 
 
-    // 分页显示考勤表
+    /**
+     * 分页显示考勤表
+     * @param page
+     * @param size
+     * @param model
+     * @return
+     */
     @RequestMapping("/showAllAttendance")
     public String showAllAttendance(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                     @RequestParam(value = "size", defaultValue = "6") Integer size,
@@ -39,6 +45,18 @@ public class TClockInfoController {
 
         return "showAllAttendance";
     }
+
+    /**
+     * 打卡
+     * @param model
+     * @return
+     */
+    @RequestMapping("/clock")
+    public String clock(Model model) {
+        model.addAttribute("msg", "打卡成功");
+        return "index";
+    }
+
 
 }
 
