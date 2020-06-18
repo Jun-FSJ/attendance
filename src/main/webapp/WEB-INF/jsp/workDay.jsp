@@ -61,7 +61,9 @@
 					<td><f:formatDate value="${workDateInfo.workDate}"
 									  type="date" dateStyle="long"/></td>
 					<td>
-						<a href="${baseUri}/deleteWokeDay?workDateId=${workDateInfo.workDateId}">删除</a>
+						<a style="color: red" href="${baseUri}/deleteWokeDay?workDateId=${workDateInfo.workDateId}">
+							<i class="layui-icon">&#xe640;</i>删除
+						</a>
 					</td>
 				</tr>
 				</c:forEach>
