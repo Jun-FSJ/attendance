@@ -63,6 +63,7 @@
 					<td>
 						<a style="color: red" href="${baseUri}/deleteWokeDay?workDateId=${workDateInfo.workDateId}">
 							<i class="layui-icon">&#xe640;</i>删除
+							
 						</a>
 					</td>
 				</tr>
