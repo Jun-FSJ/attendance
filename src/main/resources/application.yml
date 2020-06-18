@@ -3,9 +3,9 @@ server:
   port: 8888
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/check
+    url: jdbc:mysql://localhost:3306/training
     username: root
-    password: 121891
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   servlet:
     multipart:

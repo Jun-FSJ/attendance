@@ -34,8 +34,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">员工id</label>
 					<div class="layui-input-block" style="width: 400px;">
-						<input disabled="disabled" type="text" name="id" lay-verify="required"
-							autocomplete="off" value="" class="layui-input" >
+						<input disabled="disabled" type="text" name="employeeId" lay-verify="required"
+							autocomplete="off" value="" class="layui-input" id="employeeId">
 					</div>
 				</div>
 
@@ -43,28 +43,28 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">员工编号</label>
 					<div class="layui-input-block" style="width: 400px;">
-						<input type="text" name="" lay-verify="required"
-							autocomplete="off" value="" class="layui-input" id="">
+						<input type="text" name="employeeNo" lay-verify="required"
+							autocomplete="off" value="" class="layui-input" id="employeeNo">
 							
 					</div>
 				</div>
 
 				
-				<div class="layui-form-item">
-					<label class="layui-form-label">密码</label>
-					<div class="layui-input-block" style="width: 400px;">
-						<input type="text" name="" lay-verify="required"
-							autocomplete="off" value="" class="layui-input"  id="">
-							
-					</div>
-				</div>
+<%--				<div class="layui-form-item">--%>
+<%--					<label class="layui-form-label">密码</label>--%>
+<%--					<div class="layui-input-block" style="width: 400px;">--%>
+<%--						<input type="text" name="passWord" lay-verify="required"--%>
+<%--							autocomplete="off" value="" class="layui-input"  id="passWord">--%>
+<%--							--%>
+<%--					</div>--%>
+<%--				</div>--%>
 
 				
 				<div class="layui-form-item">
 					<label class="layui-form-label">姓名</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="" value="" autocomplete="off"
-							class="layui-input" id="">
+						<input type="text" name="employeeName" value="" autocomplete="off"
+							class="layui-input" id="employeeName">
 							
 					</div>
 				</div>
@@ -72,8 +72,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">账号</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="" value="" autocomplete="off"
-							class="layui-input" id="">
+						<input type="text" name="loginName" value="" autocomplete="off"
+							class="layui-input" id="loginName">
 							
 					</div>
 				</div>
@@ -81,17 +81,17 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">密码</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="password" name="" value="" autocomplete="off"
-							class="layui-input" id="">
-							
+						<input type="password" name="passWord" value="" autocomplete="off"
+							class="layui-input" id="passWord">
+
 					</div>
 				</div>
 				
 				<div class="layui-form-item">
 					<label class="layui-form-label">职位</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="" value="" autocomplete="off"
-							class="layui-input" id="">
+						<input type="text" name="job" value="" autocomplete="off"
+							class="layui-input" id="job">
 							
 					</div>
 				</div>
@@ -99,8 +99,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">工资</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="" value="" autocomplete="off"
-							class="layui-input" id="">
+						<input type="text" name="sal" value="" autocomplete="off"
+							class="layui-input" id="sal">
 							
 					</div>
 				</div>
@@ -108,8 +108,8 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">入职日期</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="date" name="" value="" autocomplete="off"
-							class="layui-input" id="">
+						<input type="date" name="time" value="" autocomplete="off"
+							class="layui-input" id="time">
 							
 					</div>
 				</div>
