@@ -18,6 +18,6 @@
 				</dd>
 				
 			</dl></li>
-		<li class="layui-nav-item"><a href="login.jsp" onclick="return confirm('确认退出账号${msAdmin.adminName }？')">安全退出</a></li>
+		<li class="layui-nav-item"><a href="loginOut" onclick="return confirm('确认退出账号${msAdmin.adminName }？')">安全退出</a></li>
 	</ul>
 </div>

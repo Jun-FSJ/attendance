@@ -5,6 +5,7 @@ import com.lmy.entity.TEmployee;
 import com.lmy.service.TEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +33,7 @@ public class TLoginAndOutCintroller {
 
 
     @PostMapping("/loginshow")
-    public String Login(String adminNumber,
+    public String login(String adminNumber,
                         String adminPwd,
                         HttpServletResponse response,
                         HttpServletRequest request) throws IOException, ServletException {
@@ -47,4 +48,12 @@ public class TLoginAndOutCintroller {
         return "login";
 
     }
+
+
+    @GetMapping("/loginOut")
+    public String loginOut(HttpServletRequest request) {
+        request.getSession().removeAttribute("employee");
+        return "redirect:/login";
+    }
+
 }
