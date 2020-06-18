@@ -10,7 +10,7 @@
 	</ul>
 	<ul class="layui-nav layui-layout-right">
 		<li class="layui-nav-item"><a href="javascript:;"> <img
-				src="${baseUri}/static/images/head.jpg" class="layui-nav-img"> ${msAdmin.adminName }
+				src="${baseUri}/static/images/head.jpg" class="layui-nav-img"> ${sessionScope.employee.employeeName }
 		</a>
 			<dl class="layui-nav-child">
 				<dd>
@@ -18,6 +18,6 @@
 				</dd>
 				
 			</dl></li>
-		<li class="layui-nav-item"><a href="loginOut" onclick="return confirm('确认退出账号${msAdmin.adminName }？')">安全退出</a></li>
+		<li class="layui-nav-item"><a href="loginOut" onclick="return confirm('确认退出账号${sessionScope.employee.employeeName }？')">安全退出</a></li>
 	</ul>
 </div>
