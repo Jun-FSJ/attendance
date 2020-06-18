@@ -1,5 +1,6 @@
 package com.lmy.service;
 
+import com.lmy.dto.PageResult;
 import com.lmy.entity.TEmployee;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -15,4 +16,5 @@ public interface TEmployeeService extends IService<TEmployee> {
      */
     TEmployee findUserAndPwd(String username,String pwd);
 
+    PageResult<TEmployee> findByPage(Integer page, Integer size);
 }

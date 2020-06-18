@@ -46,7 +46,7 @@
 						<a href="showAllAttendance.jsp">查看员工考勤</a>
 					</dd>
 					<dd>
-						<a href="showAllAttendance">员工考勤统计</a>
+						<a href="showEmployee">员工信息统计</a>
 					</dd>
 					<dd>
 						<a href="employeeInfo">员工考勤统计</a>
