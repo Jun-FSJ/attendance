@@ -50,14 +50,14 @@
 				</div>
 
 				
-<%--				<div class="layui-form-item">--%>
-<%--					<label class="layui-form-label">密码</label>--%>
-<%--					<div class="layui-input-block" style="width: 400px;">--%>
-<%--						<input type="text" name="passWord" lay-verify="required"--%>
-<%--							autocomplete="off" value="" class="layui-input"  id="passWord">--%>
-<%--							--%>
-<%--					</div>--%>
-<%--				</div>--%>
+				<div class="layui-form-item">
+					<label class="layui-form-label">密码</label>
+					<div class="layui-input-block" style="width: 400px;">
+						<input type="text" name="passWord" lay-verify="required"
+							autocomplete="off" value="" class="layui-input"  id="passWord">
+
+					</div>
+				</div>
 
 				
 				<div class="layui-form-item">
