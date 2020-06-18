@@ -25,17 +25,34 @@ public class TLoginAndOutCintroller {
     @Autowired
     private TEmployeeService tEmployeeService;
 
-    @RequestMapping("/index")
+    /**
+     * 显示主页面
+     * @return
+     */
+    @RequestMapping("/")
     public String index() {
         return "index";
     }
 
+    /**
+     * 显示登录功能
+     * @return
+     */
     @RequestMapping("/login")
     public String showLogin() {
         return "login";
     }
 
-
+    /**
+     * 登录校验
+     * @param adminNumber
+     * @param adminPwd
+     * @param response
+     * @param request
+     * @return
+     * @throws IOException
+     * @throws ServletException
+     */
     @PostMapping("/loginshow")
     public String login(String adminNumber,
                         String adminPwd,
@@ -45,7 +62,7 @@ public class TLoginAndOutCintroller {
 
         if (userAndPwd != null) {
             request.getSession().setAttribute("employee", userAndPwd);
-            return "redirect:/index";
+            return "redirect:/";
         }
 
         request.setAttribute("error", "用户名或密码错误");
@@ -53,7 +70,11 @@ public class TLoginAndOutCintroller {
 
     }
 
-
+    /**
+     * 退出登录
+     * @param request
+     * @return
+     */
     @GetMapping("/loginOut")
     public String loginOut(HttpServletRequest request) {
         request.getSession().removeAttribute("employee");
