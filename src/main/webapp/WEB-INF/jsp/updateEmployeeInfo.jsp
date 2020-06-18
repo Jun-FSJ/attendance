@@ -24,104 +24,122 @@
 		<div class="layui-body">
 			<!-- 内容主体区域 -->
 			<fieldset class="layui-elem-field layui-field-title">
-				<legend>员工信息</legend>
+				<legend>修改员工</legend>
 			</fieldset>
 
 			<form class="layui-form" action="updateAdmin" method="POST"
 				enctype="multipart/form-data">
-				<input  type="hidden" name="id" value=""  > 
-				
+<%--				<input  type="hidden" name="id" value=""  > --%>
+
+<%--				<div class="layui-form-item">--%>
+<%--					<label class="layui-form-label">员工id</label>--%>
+<%--					<div class="layui-input-block" style="width: 400px;">--%>
+<%--						<input disabled="disabled" type="text" name="employeeId" lay-verify="required"--%>
+<%--							autocomplete="off" value="" class="layui-input" id="employeeId">--%>
+<%--					</div>--%>
+<%--				</div>--%>
 				<div class="layui-form-item">
 					<label class="layui-form-label">员工id</label>
 					<div class="layui-input-block" style="width: 400px;">
-						<input disabled="disabled" type="text" name="employeeId" lay-verify="required"
-							autocomplete="off" value="" class="layui-input" id="employeeId">
+						<input type="hidden" name="employeeId" lay-verify="required"
+							   autocomplete="off" value="${employee.employeeId}" class="layui-input" id="employeeId">
 					</div>
 				</div>
 
-				
 				<div class="layui-form-item">
 					<label class="layui-form-label">员工编号</label>
 					<div class="layui-input-block" style="width: 400px;">
 						<input type="text" name="employeeNo" lay-verify="required"
-							autocomplete="off" value="" class="layui-input" id="employeeNo">
-							
+							autocomplete="off" value="${employee.employeeNo}" class="layui-input" id="employeeNo">
+
 					</div>
 				</div>
 
-				
+
 				<div class="layui-form-item">
 					<label class="layui-form-label">密码</label>
 					<div class="layui-input-block" style="width: 400px;">
 						<input type="text" name="passWord" lay-verify="required"
-							autocomplete="off" value="" class="layui-input"  id="passWord">
+							autocomplete="off" value="${employee.passWord}" class="layui-input"  id="passWord">
 
 					</div>
 				</div>
 
-				
+
 				<div class="layui-form-item">
 					<label class="layui-form-label">姓名</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="employeeName" value="" autocomplete="off"
+						<input type="text" name="employeeName" value="${employee.employeeName}" autocomplete="off"
 							class="layui-input" id="employeeName">
-							
-					</div>
-				</div>
-				
-				<div class="layui-form-item">
-					<label class="layui-form-label">账号</label>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="loginName" value="" autocomplete="off"
-							class="layui-input" id="loginName">
-							
-					</div>
-				</div>
-				
-				<div class="layui-form-item">
-					<label class="layui-form-label">密码</label>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="password" name="passWord" value="" autocomplete="off"
-							class="layui-input" id="passWord">
 
 					</div>
 				</div>
-				
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">账号</label>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="loginName" value="${employee.loginName}" autocomplete="off"
+							class="layui-input" id="loginName">
+
+					</div>
+				</div>
+
+<%--				<div class="layui-form-item">--%>
+<%--					<label class="layui-form-label">密码</label>--%>
+<%--					<div class="layui-input-inline" style="width: 100px;">--%>
+<%--						<input type="password" name="passWord" value="" autocomplete="off"--%>
+<%--							class="layui-input" id="passWord">--%>
+
+<%--					</div>--%>
+<%--				</div>--%>
+<%--				--%>
 				<div class="layui-form-item">
 					<label class="layui-form-label">职位</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="job" value="" autocomplete="off"
+						<input type="text" name="job" value="${employee.job}" autocomplete="off"
 							class="layui-input" id="job">
-							
+
 					</div>
 				</div>
-				
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">级别</label>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" list="typelist" name="role" value="" autocomplete="off"
+							   class="layui-input" id="">
+						<datalist id="typelist">
+							　　<option>0</option>
+							　　<option>1</option>
+						</datalist>
+					</div>
+				</div>
+
 				<div class="layui-form-item">
 					<label class="layui-form-label">工资</label>
 					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="sal" value="" autocomplete="off"
+						<input type="text" name="sal" value="${employee.sal}" autocomplete="off"
 							class="layui-input" id="sal">
-							
+
 					</div>
 				</div>
-				
+
 				<div class="layui-form-item">
 					<label class="layui-form-label">入职日期</label>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="date" name="time" value="" autocomplete="off"
-							class="layui-input" id="time">
-							
+					<div class="layui-input-inline" style="width: 200px;">
+						<input type="date" name="hiredate" value="${employee.hiredate}" autocomplete="off"
+							class="layui-input" id="hiredate">
+
 					</div>
 				</div>
 
 				<div class="layui-form-item">
 					<div class="layui-input-block">
 						<button  type="submit" class="layui-btn" lay-filter="demo1" id="submit">确定</button>
-						
+
 					</div>
 				</div>
-				
-				
+
+
 			</from>
 		</div>
 		<!-- 引入底部导航 -->

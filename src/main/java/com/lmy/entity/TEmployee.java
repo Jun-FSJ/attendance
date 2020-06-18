@@ -35,7 +35,7 @@ public class TEmployee implements Serializable {
 
     private String job;
 
-    private Date hiredate;
+    private String hiredate;
 
     private BigDecimal sal;
 

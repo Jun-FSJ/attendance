@@ -49,7 +49,7 @@
 						<a href="showEmployee">员工信息统计</a>
 					</dd>
 					<dd>
-						<a href="employeeInfo">员工考勤统计</a>
+						<a href="employeeInfo">新增员工信息</a>
 					</dd>
 					
 				</dl></li>

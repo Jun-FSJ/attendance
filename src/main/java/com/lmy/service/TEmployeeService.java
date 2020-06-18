@@ -16,5 +16,38 @@ public interface TEmployeeService extends IService<TEmployee> {
      */
     TEmployee findUserAndPwd(String username,String pwd);
 
+    /**
+     * 分页显示员工信息
+     * @param page
+     * @param size
+     * @return
+     */
     PageResult<TEmployee> findByPage(Integer page, Integer size);
+
+    /**
+     * 添加员工
+     * @param employee
+     * @return
+     */
+    int addAdmin(TEmployee employee);
+
+    /**
+     * 根据id查询员工信息
+     * @param employeeId
+     * @return
+     */
+    TEmployee showById(Integer employeeId);
+
+    /**
+     * 修改员工信息
+     * @param employee
+     * @return
+     */
+    int updateAdmin(TEmployee employee);
+
+    /**
+     * 删除员工信息
+     * @param employeeId
+     */
+    void deleteAdmin(Integer employeeId);
 }
