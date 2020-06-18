@@ -66,8 +66,7 @@ public class TLoginAndOutCintroller {
         userAndPwd.setPassWord(null);
         if (userAndPwd != null) {
             request.getSession().setAttribute("employee", userAndPwd);
-            String token = UUID.randomUUID().toString();
-            CookieUtils.newBuilder(response).build("TOKEN", JsonUtils.toString(userAndPwd));
+            CookieUtils.newBuilder(response).build("TOKEN", JsonUtils.objectToJson(userAndPwd));
             return "redirect:/";
         }
 

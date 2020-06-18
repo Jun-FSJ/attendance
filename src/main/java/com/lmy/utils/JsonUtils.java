@@ -3,76 +3,49 @@ package com.lmy.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author: HuYi.Zhang
- * @create: 2018-04-24 17:20
- **/
+ * Created by Bill.Tang on 2018-9-27.
+ */
+
 public class JsonUtils {
+    // 定义jackson对象
+    private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    public static final ObjectMapper mapper = new ObjectMapper();
-
-    private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
-
-
-    public static String toString(Object obj) {
-        if (obj == null) {
-            return null;
-        }
-        if (obj.getClass() == String.class) {
-            return (String) obj;
-        }
+    /**
+     * 将对象转换成json字符串。
+     */
+    public static String objectToJson(Object data) {
         try {
-            return mapper.writeValueAsString(obj);
+            String string = MAPPER.writeValueAsString(data);
+            return string;
         } catch (JsonProcessingException e) {
-            logger.error("json序列化出错：" + obj, e);
-            return null;
+            e.printStackTrace();
         }
+        return null;
     }
-
-
-    public static <T> T toBean(String json, Class<T> tClass) {
+    /**
+     * 将json结果集转化为对象
+     */
+    public static <T> T jsonToPoJo(String jsonData, Class<T> beanType) {
         try {
-            return mapper.readValue(json, tClass);
-        } catch (IOException e) {
-            logger.error("json解析出错：" + json, e);
-            return null;
+            T t = MAPPER.readValue(jsonData, beanType);
+            return t;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return null;
     }
-
-
-    public static <E> List<E> toList(String json, Class<E> eClass) {
+    /**
+     * 将json数据转换成pojo对象list
+     */
+    public  static <T> T jsonToList(String jsonData,TypeReference<T> typeReference) {
         try {
-            return mapper.readValue(json, mapper.getTypeFactory().constructCollectionType(List.class, eClass));
-        } catch (IOException e) {
-            logger.error("json解析出错：" + json, e);
-            return null;
+            return MAPPER.readValue(jsonData, typeReference);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }
-
-
-    public static <K, V> Map<K, V> toMap(String json, Class<K> kClass, Class<V> vClass) {
-        try {
-            return mapper.readValue(json, mapper.getTypeFactory().constructMapType(Map.class, kClass, vClass));
-        } catch (IOException e) {
-            logger.error("json解析出错：" + json, e);
-            return null;
-        }
-    }
-
-
-    public static <T> T nativeRead(String json, TypeReference<T> type) {
-        try {
-            return mapper.readValue(json, type);
-        } catch (IOException e) {
-            logger.error("json解析出错：" + json, e);
-            return null;
-        }
+        return null;
     }
 }
