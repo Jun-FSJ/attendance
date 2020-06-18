@@ -21,7 +21,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 		<div
 			class="col-sm-8 col-md-5 center-auto pd-sm-50 pd-xs-20 main_content">
 			
-			<form action="" method="post">
+			<form action="/loginshow" method="post">
 				<div class="form-group mg-t20">
 					<i class="icon-user icon_font"></i> 
 					<input type="text"	class="login_input" required="required" placeholder="请输入用户名" name="adminNumber" />

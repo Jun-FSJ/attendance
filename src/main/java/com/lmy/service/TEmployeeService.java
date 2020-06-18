@@ -8,4 +8,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TEmployeeService extends IService<TEmployee> {
 
+    /**
+     * 查询用户名和密码
+     * @param username
+     * @param pwd
+     */
+    TEmployee findUserAndPwd(String username,String pwd);
+
 }
