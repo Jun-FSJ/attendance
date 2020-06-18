@@ -27,29 +27,29 @@
 			<a class="" href="javascript:;">个人情况</a>
 				<dl class="layui-nav-child">
 					<dd>
-						<a href="showAllAttendance.jsp">考勤情况</a>
+						<a href="showAllAttendance">考勤情况</a>
 					</dd>
 					<dd>
-						<a href="showAllAttendance.jsp">工作日</a>
+						<a href="showAllAttendance">工作日</a>
 					</dd>
 					
 					<dd>
-						<a href="showAllAttendance.jsp">考勤统计</a>
+						<a href="showAllAttendance">考勤统计</a>
 					</dd>
 				</dl></li>
 			<li class="layui-nav-item layui-nav-itemed"><a href="javascript:;">考勤管理</a>
 				<dl class="layui-nav-child ">
 					<dd>
-						<a href="showAllAttendance.jsp">工作日管理</a>
+						<a href="showAllAttendance">工作日管理</a>
 					</dd>
 					<dd>
 						<a href="showAllAttendance.jsp">查看员工考勤</a>
 					</dd>
 					<dd>
-						<a href="showAllAttendance.jsp">员工考勤统计</a>
+						<a href="showAllAttendance">员工考勤统计</a>
 					</dd>
 					<dd>
-						<a href="employeeInfo.jsp">员工考勤统计</a>
+						<a href="employeeInfo">员工考勤统计</a>
 					</dd>
 					
 				</dl></li>

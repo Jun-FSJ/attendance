@@ -1,6 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="baseUri" value="${pageContext.request.contextPath }"
 	scope="request"></c:set>
 <!DOCTYPE html>
@@ -63,18 +64,26 @@
 						</tr>
 					</thead>
 					<tbody>
-						<%-- <c:forEach items="${1}" var="1">
-							<tr>
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
-								<td>4</td>
+					<c:forEach items="${requestScope.clockInfoList}" var="clockInfo" varStatus="stat">
+						<tr id="data_${stat.index}" class="main_trbg" align="center">
+							<td>${clockInfo.clockId }</td>
+							<td>${clockInfo.employeeNo }</td>
+							<td>
+								<f:formatDate value="${clockInfo.clockDate}"
+											  type="date" dateStyle="long"/>
+							</td>
+							<td>
+								<f:formatDate value="${clockInfo.clockInTime}"
+											  type="date" dateStyle="long"/>
+							</td>
+							<td>${clockInfo.clockInTime == null ? "未打卡" : "已打卡" }</td>
+							<td>
+								<f:formatDate value="${clockInfo.clockOffTime}"
+											  type="date" dateStyle="long"/>
+							</td>
+							<td>${clockInfo.clockOffTime == null ? "未打卡" : "已打卡" }</td>
 
-								<td>5</td>
-								<td>6</td>
-								<td>7</td>
-							</tr>
-						</c:forEach> --%>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -83,17 +92,17 @@
 				<span> 第${currPage }/${totalPage}页</span>
 				&nbsp;&nbsp; <span>总记录数：${totalCount }&nbsp;&nbsp;每页显示:${pageSize}</span>
 				&nbsp;&nbsp; <span> <c:if
-						test="${currPage != 1}">
-						<a href="">[首页]</a>&nbsp;&nbsp;
+						test="${currPage > 1}">
+						<a href="${baseUri}/showAllAttendance?page=1">[首页]</a>&nbsp;&nbsp;
            				<a
-							href="">[上一页]</a>
+							href="${baseUri}/showAllAttendance?page=${currPage-1}">[上一页]</a>
            				&nbsp;&nbsp;
        				</c:if> <c:if
-						test="">
+						test="${currPage < totalPage}">
 						<a
-							href="">[下一页]</a>&nbsp;&nbsp;
+							href="${baseUri}/showAllAttendance?page=${currPage+1}">[下一页]</a>&nbsp;&nbsp;
            				<a
-							href="">[尾页]</a>&nbsp;&nbsp;
+							href="${baseUri}/showAllAttendance?page=${totalPage}">[尾页]</a>&nbsp;&nbsp;
        				</c:if>
 				</span>
 			</div>
