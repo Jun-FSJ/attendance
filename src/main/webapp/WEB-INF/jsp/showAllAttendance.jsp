@@ -76,12 +76,14 @@
 						<f:formatDate value="${clockInfo.clockInTime}"
 									  type="date" dateStyle="long"/>
 					</td>
-					<td>${clockInfo.clockInTime == null ? "未打卡" : "已打卡" }</td>
+					<td>
+							${clockInfo.inStatus}
+					</td>
 					<td>
 						<f:formatDate value="${clockInfo.clockOffTime}"
 									  type="date" dateStyle="long"/>
 					</td>
-					<td>${clockInfo.clockOffTime == null ? "未打卡" : "已打卡" }</td>
+					<td>${clockInfo.offStatus}</td>
 
 					</c:forEach>
 				</tbody>
