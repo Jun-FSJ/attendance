@@ -5,5 +5,5 @@
 	scope="request"></c:set>
 <div class="layui-footer" style="background-color: #333300">
 	<!-- 底部固定区域 -->
-	<h5 style="text-align: center;color:#ff9933">© 版权所有，侵权必究</h5>
+	<h5 style="text-align: center;color:#ff9933">© 版权所有 三人行工作室，侵权必究</h5>
 </div>

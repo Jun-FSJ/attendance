@@ -25,6 +25,10 @@ public class TLoginAndOutCintroller {
     @Autowired
     private TEmployeeService tEmployeeService;
 
+    @RequestMapping("/index")
+    public String index() {
+        return "index";
+    }
 
     @RequestMapping("/login")
     public String showLogin() {
@@ -41,7 +45,7 @@ public class TLoginAndOutCintroller {
 
         if (userAndPwd != null) {
             request.getSession().setAttribute("employee", userAndPwd);
-            return "index";
+            return "redirect:/index";
         }
 
         request.setAttribute("error", "用户名或密码错误");
