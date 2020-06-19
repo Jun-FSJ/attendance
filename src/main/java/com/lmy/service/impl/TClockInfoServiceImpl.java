@@ -44,7 +44,7 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
         }
         // 设置分页参数
         Page<TClockInfo> pg = new Page<>(page, size);
-        // 设置查询天剑
+        // 设置查询条件
         QueryWrapper<TClockInfo> wrapper = new QueryWrapper<>();
         // 查询
         log.info("考勤分页查询开始！");
@@ -74,7 +74,6 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
                 }
             }
 
-
             // 获取下班打卡时间
             Date offTime = c.getClockOffTime();
             if (offTime == null) {
@@ -83,9 +82,9 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
                 Calendar offCalendar = Calendar.getInstance();
                 offCalendar.setTime(offTime);
                 int hourOff = offCalendar.get(Calendar.HOUR_OF_DAY);
-                if (hourOff > 18) {
+                if (hourOff >= 18) {
                     dto.setOffStatus("正常");
-                } else if (hourOff >= 18) {
+                } else if (hourOff > 16 && hourOff < 18 ) {
                     dto.setOffStatus("早退");
                 } else {
                     dto.setOffStatus("旷工");
@@ -134,7 +133,7 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
             // 上班打卡
             if (todayClock.size() > 0) {
                 // 当天已打卡
-                msg = "【打卡】 已打卡，无序重复操作";
+                msg = "【打卡】 已打卡，无需重复操作";
                 return msg;
             }
             clockInfo.setClockInTime(nowDate);
@@ -163,10 +162,7 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
             }
             return msg;
         }
-
         return msg;
-
     }
-
 
 }
