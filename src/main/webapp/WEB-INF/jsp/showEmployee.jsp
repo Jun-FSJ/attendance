@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -47,9 +47,12 @@
 						<col width="150">
 						<col width="200">
 						<col width="100">
-						<col width="200">
+						<col width="300">
+						<col width="300">
 						<col width="100">
-						
+						<col width="100">
+						<col width="300">
+
 						<col>
 					</colgroup>
 					<thead>
@@ -83,8 +86,13 @@
 							<td>${employeeInfo.sal }</td>
 							<td>${employeeInfo.role }</td>
 							<td>
-								<a href="${baseUri}/showUpdateAdmin?employeeId=${employeeInfo.employeeId}">修改</a>
-								<a href="${baseUri}/deleteAdmin?employeeId=${employeeInfo.employeeId}">删除</a>
+								<a style="color: skyblue" href="${baseUri}/showUpdateAdmin?employeeId=${employeeInfo.employeeId}">
+									<i class="layui-icon">&#xe642;</i>   修改
+								</a>
+								&nbsp;
+								<a style="color: red" href="${baseUri}/deleteAdmin?employeeId=${employeeInfo.employeeId}">
+									<i class="layui-icon">&#xe640;</i>删除
+								</a>
 							</td>
 					</c:forEach>
 					</tbody>
