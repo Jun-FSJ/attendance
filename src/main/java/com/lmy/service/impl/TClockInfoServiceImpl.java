@@ -93,13 +93,13 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
             }
 
             // 判断总体旷工逻辑
-            if ((inTime == null && offTime == null) ||
-                    (inTime != null && offTime == null) ||
-                    (inTime == null && offTime != null)) {
-                // 旷工
-                dto.setOffStatus("旷工");
-                dto.setInStatus("旷工");
-            }
+//            if ((inTime == null && offTime == null) ||
+//                    (inTime != null && offTime == null) ||
+//                    (inTime == null && offTime != null)) {
+//                // 旷工
+//                dto.setOffStatus("旷工");
+//                dto.setInStatus("旷工");
+//            }
             return dto;
         }).collect(Collectors.toList());
 

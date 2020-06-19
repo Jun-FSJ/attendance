@@ -22,7 +22,7 @@
 		</a>
 			<dl class="layui-nav-child">
 				<dd>
-					<a href="${baseUri}/jsp/employeeInfo.jsp">基本资料</a>
+					<a href="${baseUri}/showEmployee">基本资料</a>
 				</dd>
 				
 			</dl>
