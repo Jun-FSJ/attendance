@@ -85,7 +85,7 @@ public class TClockInfoServiceImpl extends ServiceImpl<TClockInfoMapper, TClockI
                 int hourOff = offCalendar.get(Calendar.HOUR_OF_DAY);
                 if (hourOff > 18) {
                     dto.setOffStatus("正常");
-                } else if (hourOff >= 18) {
+                } else if (hourOff <= 18) {
                     dto.setOffStatus("早退");
                 } else {
                     dto.setOffStatus("旷工");

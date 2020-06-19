@@ -73,15 +73,15 @@
 									  type="date" dateStyle="long"/>
 					</td>
 					<td>
-						<f:formatDate value="${clockInfo.clockInTime}"
-									  type="date" dateStyle="long"/>
+						<f:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+                                      value="${clockInfo.clockInTime}" />
 					</td>
 					<td>
 							${clockInfo.inStatus}
 					</td>
 					<td>
-						<f:formatDate value="${clockInfo.clockOffTime}"
-									  type="date" dateStyle="long"/>
+						<f:formatDate pattern="yyyy-MM-dd hh:mm:ss"
+                                        value="${clockInfo.clockOffTime}" />
 					</td>
 					<td>${clockInfo.offStatus}</td>
 

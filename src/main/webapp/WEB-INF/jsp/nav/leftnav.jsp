@@ -43,7 +43,7 @@
 						<a href="toAddWokeDay">工作日管理</a>
 					</dd>
 					<dd>
-						<a href="showAllAttendance.jsp">查看员工考勤</a>
+						<a href="showAllAttendance">查看员工考勤</a>
 					</dd>
 					<dd>
 						<a href="showEmployee">员工信息统计</a>
